@@ -210,7 +210,7 @@ atm_op = options_atm[atm_options]
 col_op = options_col[col_options]
 
 if on:
-    # Define filter conditions
+    # Conditions filtres
     filter_conditions = []
 
     if dep_op != 0:
@@ -226,7 +226,7 @@ if on:
     if col_op != 0:
         filter_conditions.append(df['col'] == col_op)
 
-    # Apply filters
+    # Application des filtres
     if filter_conditions:
         df = df[np.logical_and.reduce(filter_conditions)]
 
@@ -250,3 +250,12 @@ with col5:
 
 # Carte
 st.map(df[['lat', 'lon']], color="#4b6adb", size=20)
+
+hide_streamlit_style = """
+        <style>
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        </style>
+        """
+
+st.markdown(hide_streamlit_style, unsafe_allow_html=True) 

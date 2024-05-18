@@ -242,3 +242,13 @@ with stat_col2:
     obstacles_par_type = df['obsm'].value_counts().reset_index(name='nb_obstacles').sort_values(by="nb_obstacles", ascending=False)
     fig_obstacle = px.bar(obstacles_par_type, x='obsm', y='nb_obstacles', labels={'obsm': 'Obstacle mobile', 'nb_obstacles': "Nombre d'obstacles heurtés"}, color="obsm")
     st.plotly_chart(fig_obstacle, theme=None)   
+
+
+hide_streamlit_style = """
+        <style>
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        </style>
+        """
+
+st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
