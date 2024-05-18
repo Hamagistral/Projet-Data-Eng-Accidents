@@ -186,10 +186,10 @@ with st.sidebar:
     col_options = st.selectbox("Type de collision", list(options_col.keys()))
 
 # Importation des données
-df_caracteristiques = pd.read_csv("../data/carcteristiques-2022.csv", sep=';')
-df_lieux = pd.read_csv("../data/lieux-2022.csv", sep=';', low_memory=False)
-df_vehicules = pd.read_csv("../data/vehicules-2022.csv", sep=';')
-df_usagers = pd.read_csv("../data/usagers-2022.csv", sep=';')
+df_caracteristiques = pd.read_csv("streamlit/data/carcteristiques-2022.csv", sep=';')  # ../data/carcteristiques-2022.csv for local use
+df_lieux = pd.read_csv("streamlit/data/lieux-2022.csv", sep=';', low_memory=False)
+df_vehicules = pd.read_csv("streamlit/data/vehicules-2022.csv", sep=';')
+df_usagers = pd.read_csv("streamlit/data/usagers-2022.csv", sep=';')
 
 # Transformation des données
 df_caracteristiques = df_caracteristiques.rename(columns={"long": "lon", "Accident_Id": "Num_Acc"})

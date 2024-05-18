@@ -8,10 +8,10 @@ st.set_page_config(page_title="Tableau de bord", layout="wide", page_icon='📊'
 st.markdown("# 🚗 Étude et analyse des accidents corporels de la circulation routière")
 
 # Chargement des fichiers CSV
-df_caracteristiques = pd.read_csv("../data/carcteristiques-2022.csv", sep=';')
-df_lieux = pd.read_csv("../data/lieux-2022.csv", sep=';', low_memory=False)
-df_vehicules = pd.read_csv("../data/vehicules-2022.csv", sep=';')
-df_usagers = pd.read_csv("../data/usagers-2022.csv", sep=';')
+df_caracteristiques = pd.read_csv("streamlit/data/carcteristiques-2022.csv", sep=';') # ../data/carcteristiques-2022.csv for local use
+df_lieux = pd.read_csv("streamlit/data/lieux-2022.csv", sep=';', low_memory=False)
+df_vehicules = pd.read_csv("streamlit/data/vehicules-2022.csv", sep=';')
+df_usagers = pd.read_csv("streamlit/data/usagers-2022.csv", sep=';')
 
 # Renommer les colonnes
 df_caracteristiques = df_caracteristiques.rename(columns={"long": "lon", "Accident_Id": "Num_Acc"})
